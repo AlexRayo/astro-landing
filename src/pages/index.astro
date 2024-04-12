@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LayoutManager from "../layouts/Layout.astro";
+import Head from "../sections/head.astro";
+import Header from "../sections/header.astro";
+import Cover from "../sections/cover.astro";
+import Footer from "../sections/footer.astro";
+import Preparation from "../sections/preparation.astro";
+import SliderImg from "../sections/slider_img.astro";
+// import Splide from "@splidejs/splide";
+// var splide = new Splide(".splide", {
+// 	type: "loop",
+// });
+// splide.mount();
+---
+
+<!doctype html>
+<Layout title="Rancho Bombs - An easy way to make birria">
+	<main>
+		<Header />
+		<Cover />
+		<Preparation />
+		<SliderImg />
+		<Footer />
+	</main>
+</Layout>
