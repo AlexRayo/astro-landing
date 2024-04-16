@@ -1,1 +1,66 @@
-<header class="h-24"></header>
+---
+import MenuItem from "../components/MenuItem.astro";
+let menuOpen: boolean = false;
+console.log("menuOpen: " + menuOpen);
+---
+
+<header class="">
+  <nav
+    class="container flex justify-between items-center px-2 pt-8 pb-4 lg:pb-0 relative"
+  >
+    <div class="w-32 h-20 border-2 border-slate-200"></div>
+
+    <div class="relative inline-block text-left dropdown text-3xl">
+      <div class="mb-4">
+        <button
+          onclick={`${(menuOpen = !menuOpen)}`}
+          id="icon_menu"
+          class={`md:hidden text-[2.75rem  ${!menuOpen ? "bg-green-500" : "bg-red-500"}`}
+          type="button">☰</button
+        >
+      </div>
+      <div
+        class="opacity-100 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 md:visible"
+      >
+        <div
+          class={`absolute md:relative right-0 w-56 md:w-auto mt-2 md:mt-0 origin-top-right bg-secondary-color md:bg-transparent rounded-md`}
+          role="menu"
+        >
+          <div class="px-4">
+            <ul id="menu" class="p-0 py-2 md:py-0 md:flex">
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  if (document) {
+    const menu: HTMLElement | null = document.getElementById("menu");
+    const icon_menu: HTMLElement | null = document.getElementById("icon_menu");
+
+    const handleIconContainerClick = () => {
+      if (menu) {
+        menu.classList.toggle("scale-100");
+      }
+    };
+
+    const handleOutsideClick = (event: MouseEvent) => {
+      const targetNode = event.target as Node;
+      if (
+        menu &&
+        icon_menu &&
+        !menu.contains(targetNode) &&
+        !icon_menu.contains(targetNode)
+      ) {
+        menu.classList.remove("scale-100");
+      }
+    };
+  }
+</script>
