@@ -1,42 +1,24 @@
 ---
 import MenuItem from "../components/MenuItem.astro";
-let menuOpen: boolean = false;
-console.log("menuOpen: " + menuOpen);
+import Container from "../layouts/container.astro";
 ---
 
-<header class="">
-  <nav
-    class="container flex justify-between items-center px-2 pt-8 pb-4 lg:pb-0 relative"
-  >
-    <div class="w-32 h-20 border-2 border-slate-200"></div>
+<header>
+  <nav class="py-4">
+    <Container extra_classes="relative flex justify-between items-center">
+      <div class="border-2 border-slate-200">LOGO</div>
 
-    <div class="relative inline-block text-left dropdown text-3xl">
-      <div class="mb-4">
-        <button
-          onclick={`${(menuOpen = !menuOpen)}`}
-          id="icon_menu"
-          class={`md:hidden text-[2.75rem  ${!menuOpen ? "bg-green-500" : "bg-red-500"}`}
-          type="button">☰</button
-        >
-      </div>
-      <div
-        class="opacity-100 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 md:visible"
+      <button id="icon_menu" class="md:hidden text-5xl" type="button">☰</button>
+      <ul
+        id="menu"
+        class="absolute md:relative right-0 top-[48px] md:top-0 p-0 py-2 md:py-0 md:flex scale-0 md:scale-100 bg-white min-w-80 text-right rounded-bl-2xl z-10"
       >
-        <div
-          class={`absolute md:relative right-0 w-56 md:w-auto mt-2 md:mt-0 origin-top-right bg-secondary-color md:bg-transparent rounded-md`}
-          role="menu"
-        >
-          <div class="px-4">
-            <ul id="menu" class="p-0 py-2 md:py-0 md:flex">
-              <MenuItem />
-              <MenuItem />
-              <MenuItem />
-              <MenuItem />
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+      </ul>
+    </Container>
   </nav>
 </header>
 
@@ -45,13 +27,13 @@ console.log("menuOpen: " + menuOpen);
     const menu: HTMLElement | null = document.getElementById("menu");
     const icon_menu: HTMLElement | null = document.getElementById("icon_menu");
 
-    const handleIconContainerClick = () => {
+    icon_menu?.addEventListener("click", () => {
       if (menu) {
-        menu.classList.toggle("scale-100");
+        menu.classList.toggle("!scale-100");
       }
-    };
+    });
 
-    const handleOutsideClick = (event: MouseEvent) => {
+    document.addEventListener("click", (event) => {
       const targetNode = event.target as Node;
       if (
         menu &&
@@ -59,8 +41,8 @@ console.log("menuOpen: " + menuOpen);
         !menu.contains(targetNode) &&
         !icon_menu.contains(targetNode)
       ) {
-        menu.classList.remove("scale-100");
+        menu.classList.remove("!scale-100");
       }
-    };
+    });
   }
 </script>

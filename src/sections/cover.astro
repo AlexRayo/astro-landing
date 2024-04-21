@@ -3,14 +3,14 @@ import BtnBuy from "../components/BtnBuy.astro";
 ---
 
 <section
-  class="relative bg-no-repeat bg-fixed bg-cover bg-[center_top_100px] md:bg-[center_top_-200px]"
+  class="relative overflow-hidden bg-no-repeat bg-fixed bg-cover bg-[center_top_100px] md:bg-[center_top_-200px] text-center md:text-left"
 >
   <div class="absolute w-full h-full bg-slate-800 opacity-80"></div>
   <div
-    class="relative container px-2 lg:px-0 lg:w-10/12 xl:w-8/12 py-36 h-[700px] md:h-[500px] lg:h-[700px] flex justify-center flex-col md:flex-row md:justify-between"
+    class="relative container px-2 lg:px-0 lg:w-10/12 xl:w-8/12 py-36 h-[750px] md:h-[500px] lg:h-[700px] flex justify-center flex-col md:flex-row md:justify-between"
   >
     <div class="self-center">
-      <h1 class="text-5xl md:text-6xl xl:text-8xl font-bold text-[#FFD444]">
+      <h1 class="text-5xl md:text-6xl xl:text-8xl font-black text-[#FFD444]">
         Rancho Bombs
       </h1>
       <h2
@@ -18,7 +18,7 @@ import BtnBuy from "../components/BtnBuy.astro";
       >
         An easy Way to make Birria
       </h2>
-      <p class="text-lg lg:text-2xl max-w-[680px] mt-1 md:mt-2 text-white">
+      <p class="text-lg lg:text-2xl max-w-[680px] mt-2 md:mt-2 text-white">
         Our Birria bombs contains all the amazing flavor you are wishing for.
       </p>
       <BtnBuy />
@@ -26,7 +26,11 @@ import BtnBuy from "../components/BtnBuy.astro";
     <div
       class="md:absolute md:w-[480px] lg:w-[640px] xl:w-[740px] md:bottom-0 right-0"
     >
-      <img src="../../img/img_pack_and_tacos.png" alt="Rancho Bombs pack" />
+      <img
+        class="mt-8"
+        src="../../img/img_pack_and_tacos.png"
+        alt="Rancho Bombs pack"
+      />
     </div>
   </div>
 </section>
