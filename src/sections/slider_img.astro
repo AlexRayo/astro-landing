@@ -9,9 +9,14 @@ import Modal from "../components/Modal.astro";
       <div class="splide h-full">
         <div class="splide__track h-full">
           <ul class="splide__list">
+            <!-- slide 1 -->
             <li class="splide__slide">
-              <div class="h-full grid grid-cols-3 grid-rows-3 gap-4">
-                <div class="row-span-3 rounded-2xl overflow-hidden">
+              <div
+                class="h-full grid grid-cols-2 grid-rows-3 lg:grid-cols-4 gap-4"
+              >
+                <div
+                  class="row-span-2 rounded-2xl lg:col-span-2 lg:row-span-3 overflow-hidden"
+                >
                   <img
                     class="h-full w-full object-cover"
                     src="https://the2spoons.com/wp-content/uploads/2020/07/C6AE872A-AC9E-4C26-B368-BCCF3F4F3D37-1536x1023.jpeg"
@@ -26,7 +31,7 @@ import Modal from "../components/Modal.astro";
                   />
                 </div>
                 <div
-                  class="h-full w-full overflow-hidden row-span-2 col-span-2 col-start-2 row-start-2 rounded-2xl"
+                  class="h-full w-full overflow-hidden row-span-3 lg:col-start-3 lg:row-span-3 col-span-2 lg:col-span-3 col-start-1 row-start-3 rounded-2xl"
                 >
                   <img
                     class="h-full w-full object-cover"
@@ -35,7 +40,7 @@ import Modal from "../components/Modal.astro";
                   />
                 </div>
                 <div
-                  class="col-start-3 row-start-1 rounded-2xl overflow-hidden"
+                  class="lg:col-start-3 lg:row-start-1 rounded-2xl overflow-hidden"
                 >
                   <img
                     class="h-full w-full object-cover"
@@ -45,6 +50,8 @@ import Modal from "../components/Modal.astro";
                 </div>
               </div>
             </li>
+
+            <!-- slide 2 -->
             <li class="splide__slide">
               <div>
                 <img
