@@ -6,14 +6,14 @@ const { amount, amount_unit, description } = Astro.props;
   class="w-full lg:w-auto flex lg:flex-col text-center px-6 py-3 md:p-6 lg:p-0 rounded-3xl bg-slate-100 lg:bg-transparent"
 >
   <div class="flex flex-wrap lg:flex-col">
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-0 xl:gap-4">
       <slot />
-      <p class="text-4xl md:text-5xl font-bold">
+      <p class="text-4xl xl:text-5xl font-bold">
         {amount}<b class="ml-2 text-2xl">{amount_unit}</b>
       </p>
     </div>
     <p
-      class={`${amount_unit ? "ml-28 sm:ml-2 sm:mt-5" : "ml-2"} flex items-center lg:ml-0 lg:justify-center lg:mt-4 text-xl lg:text-2xl font-medium`}
+      class={`${amount_unit ? "ml-24 -mt-4 sm:ml-2 sm:mt-2 lg:mt-0" : "ml-2"} flex items-center lg:ml-0 lg:justify-center xl:mt-4 text-lg xl:text-2xl font-medium`}
     >
       {description}
     </p>
