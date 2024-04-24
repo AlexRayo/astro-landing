@@ -1,4 +1,11 @@
-<svg width="505" height="421" viewBox="0 0 505 421" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          class=""
+          width="100%"
+          height="auto"
+          viewBox="0 0 505 421"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
 <g clip-path="url(#clip0_1_3736)">
 <circle cx="169.5" cy="32" r="22" fill="#009245"/>
 <circle cx="48.5" cy="407" r="14" fill="#DF2536"/>

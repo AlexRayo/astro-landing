@@ -1,9 +1,10 @@
 ---
 import Modal from "../components/Modal.astro";
+import Container from "../layouts/container.astro";
 ---
 
-<section class="bg-white">
-  <div class="container px-2 lg:px-0 lg:w-10/12 xl:w-8/12 py-36">
+<section class="bg-white py-36">
+  <Container>
     <h2 class="text-5xl md:text-6xl font-bold">A Taste of Home</h2>
     <div class="mt-12 w-full h-[700px]">
       <div class="splide h-full">
@@ -81,10 +82,7 @@ import Modal from "../components/Modal.astro";
         </div>
       </div>
     </div>
-  </div>
+  </Container>
 </section>
-<script>
-  const img_container = document.querySelectorAll("[img-container]");
-</script>
 
 <!-- <Modal /> -->

@@ -1,17 +1,20 @@
 ---
 import CardReview from "../components/CardReview.astro";
+import Container from "../layouts/container.astro";
 ---
 
 <section class="bg-slate-800">
-  <div class="container px-2 lg:px-0 lg:w-10/12 xl:w-8/12 py-36">
-    <h2 class="text-5xl md:text-6xl text-white font-bold my-12">Reviews</h2>
-    <div class="my-12 flex gap-8 overflow-x-scroll w-full">
-      <CardReview />
-      <CardReview />
-      <CardReview />
-      <CardReview />
-      <CardReview />
-      <CardReview />
+  <Container>
+    <div class="container px-2 lg:px-0 lg:w-10/12 xl:w-8/12 py-36">
+      <h2 class="text-5xl md:text-6xl text-white font-bold my-12">Reviews</h2>
+      <div class="my-12 flex gap-8 overflow-x-scroll w-full">
+        <CardReview />
+        <CardReview />
+        <CardReview />
+        <CardReview />
+        <CardReview />
+        <CardReview />
+      </div>
     </div>
-  </div>
+  </Container>
 </section>

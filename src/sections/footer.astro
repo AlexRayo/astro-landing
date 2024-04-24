@@ -3,7 +3,20 @@
     // @ts-ignore
     var splide = new Splide(".splide", {
       type: "loop",
+
+      classes: {
+        pagination: "splide__pagination top-[750px]", // container
+        page: "splide__pagination__page h-8 w-8 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
+      },
     });
     splide.mount();
   </script>
 </footer>
+
+<style>
+  .splide__pagination__page {
+    height: 20px !important;
+    width: 20px !important;
+    border: solid red 1px;
+  }
+</style>
