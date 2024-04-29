@@ -19,6 +19,7 @@ import Container from "../layouts/container.astro";
                   class="row-span-2 rounded-2xl lg:col-span-2 lg:row-span-3 overflow-hidden"
                 >
                   <img
+                    img-slide
                     class="h-full w-full object-cover"
                     src="https://the2spoons.com/wp-content/uploads/2020/07/C6AE872A-AC9E-4C26-B368-BCCF3F4F3D37-1536x1023.jpeg"
                     alt="Imagen 1"
@@ -26,6 +27,7 @@ import Container from "../layouts/container.astro";
                 </div>
                 <div class="rounded-2xl overflow-hidden">
                   <img
+                    img-slide
                     class="h-full w-full object-cover"
                     src="https://www.gastrolabweb.com/u/fotografias/m/2020/11/29/f1280x720-5646_137321_5050.jpg"
                     alt="Imagen 2"
@@ -35,6 +37,7 @@ import Container from "../layouts/container.astro";
                   class="h-full w-full overflow-hidden row-span-3 lg:col-start-3 lg:row-span-3 col-span-2 lg:col-span-3 col-start-1 row-start-3 rounded-2xl"
                 >
                   <img
+                    img-slide
                     class="h-full w-full object-cover"
                     src="https://the2spoons.com/wp-content/uploads/2020/07/C6AE872A-AC9E-4C26-B368-BCCF3F4F3D37-1536x1023.jpeg"
                     alt="Imagen 1"
@@ -44,6 +47,7 @@ import Container from "../layouts/container.astro";
                   class="lg:col-start-3 lg:row-start-1 rounded-2xl overflow-hidden"
                 >
                   <img
+                    img-slide
                     class="h-full w-full object-cover"
                     src="https://i.pinimg.com/originals/9b/7e/a0/9b7ea0bc8dc365995a723e1075bc8bf7.jpg"
                     alt="Imagen 3"
@@ -56,6 +60,7 @@ import Container from "../layouts/container.astro";
             <li class="splide__slide">
               <div>
                 <img
+                  img-slide
                   src="https://the2spoons.com/wp-content/uploads/2020/07/C6AE872A-AC9E-4C26-B368-BCCF3F4F3D37-1536x1023.jpeg"
                   alt="Imagen 1"
                 />
@@ -64,6 +69,7 @@ import Container from "../layouts/container.astro";
             <li class="splide__slide">
               <div>
                 <img
+                  img-slide
                   class="h-full w-full object-cover"
                   src="https://www.gastrolabweb.com/u/fotografias/m/2020/11/29/f1280x720-5646_137321_5050.jpg"
                   alt="Imagen 2"
@@ -73,6 +79,7 @@ import Container from "../layouts/container.astro";
             <li class="splide__slide">
               <div class="h-full overflow-hidden">
                 <img
+                  img-slide
                   src="https://i.pinimg.com/originals/9b/7e/a0/9b7ea0bc8dc365995a723e1075bc8bf7.jpg"
                   alt="Imagen 3"
                 />
@@ -85,4 +92,69 @@ import Container from "../layouts/container.astro";
   </Container>
 </section>
 
-<!-- <Modal /> -->
+<!-- modal -->
+<div modal-container class="hidden fixed w-screen h-screen top-0 z-[999]">
+  <!-- bg img -->
+  <div
+    modal-close
+    class="close_modal absolute bg-slate-950 opacity-80 w-full h-full"
+  >
+  </div>
+  <div modal-close class="absolute w-full flex justify-end"></div>
+
+  <!-- image block -->
+  <div class="flex justify-center items-center w-full h-full">
+    <div
+      class="relative container lg:w-10/12 xl:w-8/12 h-[500px] md:h-[500px] lg:h-[700px] z-20"
+    >
+      <svg
+        modal-close
+        class="absolute right-0 close_modal cursor-pointer z-[9999] scale-90 hover:scale-100 opacity-70 hover:opacity-100 transition-all duration-300 drop-shadow-md"
+        xmlns="http://www.w3.org/2000/svg"
+        width="64"
+        height="64"
+        viewBox="0 0 24 24"
+        style="filter: drop-shadow(0 5px 5px rgb(255 255 255 / 1))"
+        ><g fill="none"
+          ><path
+            d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+          ></path><path
+            fill="#000"
+            d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2M9.879 8.464a1 1 0 0 0-1.498 1.32l.084.095l2.12 2.12l-2.12 2.122a1 1 0 0 0 1.32 1.498l.094-.083L12 13.414l2.121 2.122a1 1 0 0 0 1.498-1.32l-.083-.095L13.414 12l2.122-2.121a1 1 0 0 0-1.32-1.498l-.095.083L12 10.586z"
+          ></path></g
+        ></svg
+      >
+      <img
+        modal-img
+        src="https://the2spoons.com/wp-content/uploads/2020/07/C6AE872A-AC9E-4C26-B368-BCCF3F4F3D37-1536x1023.jpeg"
+        alt="Image slider rancho-bombs"
+        class="w-full h-full object-cover border-4 rounded-xl border-white"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  const imgs: NodeListOf<Element> = document.querySelectorAll("[img-slide]");
+  const modal_container: HTMLDivElement | null =
+    document.querySelector("[modal-container]");
+  const modal_img: HTMLImageElement | null =
+    document.querySelector("[modal-img]");
+  const modal_close: NodeListOf<Element> =
+    document.querySelectorAll("[modal-close]");
+
+  imgs.forEach((img) => {
+    if (img instanceof HTMLImageElement && modal_img) {
+      img.addEventListener("click", () => {
+        modal_container?.classList.remove("hidden");
+        modal_img.src = img.src;
+      });
+    }
+  });
+
+  modal_close.forEach((element) => {
+    element.addEventListener("click", () => {
+      modal_container?.classList.add("hidden");
+    });
+  });
+</script>

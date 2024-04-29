@@ -1,4 +1,9 @@
-<div id="modal" class="fixed w-screen h-screen top-0 z-10">
+---
+const { extra_classes } = Astro.props;
+---
+
+<!-- ${extra_classes ? '': 'hidden'}  -->
+<div id="modal" class={`fixed w-screen h-screen top-0 z-[999]`}>
   <div class="close_modal absolute bg-slate-950 opacity-80 w-full h-full"></div>
   <div class="absolute w-full flex justify-end">
     <svg
