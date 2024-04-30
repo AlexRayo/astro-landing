@@ -1,22 +1,28 @@
 ---
-const { amount, amount_unit, description, img_class, description_class } =
-  Astro.props;
+const {
+  amount,
+  birria,
+  amount_unit,
+  description,
+  img_class,
+  description_class,
+} = Astro.props;
 ---
 
 <div
-  class="w-full lg:w-auto flex lg:flex-col text-center px-4 sm:px-6 py-3 md:p-6 lg:p-0 rounded-3xl bg-slate-100 lg:bg-transparent"
+  class="w-full lg:w-auto flex justify-center md:justify-start lg:flex-col text-center px-4 sm:px-6 py-3 md:p-6 lg:p-0 rounded-3xl bg-slate-100 lg:bg-transparent"
 >
-  <div class="flex flex-wrap lg:flex-col">
+  <div class="flex justify-center flex-wrap lg:flex-col">
     <div class="flex items-center justify-center">
       <div class={`${img_class}`}>
         <slot />
       </div>
-      <p class="ml-2 text-4xl xl:text-5xl font-bold">
+      <p class="-ml-6 md:-ml-2 xl:ml-4 text-4xl xl:text-5xl font-bold">
         {amount}<b class="ml-2 text-2xl">{amount_unit}</b>
       </p>
     </div>
     <p
-      class={`${amount_unit ? "ml-24 -mt-4 sm:ml-2 sm:mt-2 lg:mt-0" : "ml-2"} flex items-center lg:ml-0 lg:justify-center xl:mt-4 text-lg xl:text-2xl font-medium ${description_class}`}
+      class={`${amount_unit ? "-mt-3 sm:mt-3 sm:ml-2 lg:ml-0 lg:mt-0" : birria ? "-ml-2" : "ml-2"} flex items-center lg:ml-0 lg:justify-center xl:mt-4 text-lg xl:text-2xl font-semibold ${description_class}`}
     >
       {description}
     </p>
