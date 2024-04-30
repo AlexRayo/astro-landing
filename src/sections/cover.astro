@@ -1,6 +1,8 @@
 ---
 import BtnBuy from "../components/BtnBuy.astro";
 import Container from "../layouts/container.astro";
+import { Image } from "astro:assets";
+import localCoverImage from "../../img/img_pack_and_tacos.png";
 ---
 
 <section
@@ -33,11 +35,7 @@ import Container from "../layouts/container.astro";
     <div
       class="md:absolute md:w-[480px] lg:w-[640px] xl:w-[740px] md:bottom-0 right-0 z-[20]"
     >
-      <img
-        class="mt-8"
-        src="../../public/img_pack_and_tacos.png"
-        alt="Rancho Bombs pack"
-      />
+      <Image class="mt-8" src={localCoverImage} alt="Rancho Bombs pack" />
     </div>
   </Container>
 
