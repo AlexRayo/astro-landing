@@ -2,7 +2,9 @@
 const { name, description, text_left } = Astro.props;
 ---
 
-<div class={`flex justify-center p-8 xl:py-20 xl:w-96 bg-white rounded-3xl`}>
+<div
+  class={`flex justify-center px-8 py-14 xl:py-20 xl:px-10 xl:w-96 bg-white rounded-3xl text-[#202020]`}
+>
   <div class="sm:flex items-center lg:flex-col">
     <!-- slot = svg -->
     <div class="lg:h-[154px] flex items-end">
@@ -13,7 +15,7 @@ const { name, description, text_left } = Astro.props;
     >
       <p class="font-semibold text-2xl mb-3 mt-5 sm:mt-0 lg:mt-5">{name}</p>
       <p
-        class={`xl:max-w-60 text-lg xl:text-xl mx-auto sm:text-left ${text_left === "true" ? "text-left" : "text-center lg:text-center"}`}
+        class={`text-lg xl:text-xl mx-auto sm:text-left ${text_left === "true" ? "text-left" : "text-center lg:text-center"}`}
       >
         {description}
       </p>
