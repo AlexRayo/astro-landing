@@ -1,22 +1,56 @@
 <footer class="">
   <script>
+    import { forEach } from "@splidejs/splide/src/js/utils";
+
     // @ts-ignore
-    var splide = new Splide(".splide", {
+    var splide = new Splide("#splide", {
       type: "loop",
 
       classes: {
+        arrow: "splide__arrow scale-150",
         pagination: "splide__pagination top-[750px]", // container
         page: "splide__pagination__page h-8 w-8 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
       },
     });
     splide.mount();
+
+    // @ts-ignore
+    var splide2 = new Splide("#splide2", {
+      type: "loop",
+      drag: "free",
+      perPage: 4,
+      classes: {
+        arrow: "splide__arrow scale-150",
+        pagination: "splide__pagination top-[400px]", // container
+        page: "splide__pagination__page h-8 w-8 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
+      },
+      breakpoints: {
+        640: {
+          perPage: 1,
+        },
+        768: {
+          perPage: 2,
+        },
+        1024: {
+          perPage: 2,
+        },
+        1280: {
+          perPage: 3,
+        },
+        1536: {
+          perPage: 4,
+        },
+      },
+    });
+    splide2.mount();
+
+    // var dots_slides: NodeListOf<HTMLElement> = document.querySelectorAll(
+    //   ".splide__pagination__page",
+    // );
+
+    // dots_slides.forEach((dot) => {
+    //   dot.style.height = "20px";
+    //   dot.style.width = "20px";
+    // });
   </script>
 </footer>
-
-<style>
-  .splide__pagination__page {
-    height: 20px !important;
-    width: 20px !important;
-    border: solid red 1px;
-  }
-</style>
