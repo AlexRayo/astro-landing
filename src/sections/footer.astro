@@ -1,7 +1,57 @@
-<footer class="">
-  <script>
-    import { forEach } from "@splidejs/splide/src/js/utils";
+---
+import Container from "../layouts/container.astro";
+import { Image } from "astro:assets";
+import imgFooter from "../../img/img-footer.jpg";
+---
 
+<footer class="">
+  <Container>
+    <div
+      id="splide3"
+      class="w-full h-96 mb-24 overflow-hidden imgs-footer whitespace-nowrap"
+    >
+      <Image
+        class="img-footer h-full object-cover inline -ml-1"
+        src={imgFooter}
+        alt="Rancho Bombs pack"
+      />
+      <Image
+        class="img-footer h-full object-cover inline -ml-1"
+        src={imgFooter}
+        alt="Rancho Bombs pack"
+      />
+    </div>
+  </Container>
+
+  <style>
+    /* .imgs-footer {
+      mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+      );
+    } */
+    .img-footer {
+      animation: 25s slide infinite linear;
+    }
+
+    @keyframes slide {
+      from {
+        transform: translate(0);
+      }
+      to {
+        transform: translate(-100%);
+      }
+    }
+  </style>
+
+  <script>
+    // var imgFooterCopy = document.querySelector('.img-footer')?.cloneNode(true);
+    // if (imgFooterCopy) {
+    //   document.querySelector('.imgs-footer')?.appendChild(imgFooterCopy);
+    // }
     // @ts-ignore
     var splide = new Splide("#splide", {
       type: "loop",
@@ -43,14 +93,5 @@
       },
     });
     splide2.mount();
-
-    // var dots_slides: NodeListOf<HTMLElement> = document.querySelectorAll(
-    //   ".splide__pagination__page",
-    // );
-
-    // dots_slides.forEach((dot) => {
-    //   dot.style.height = "20px";
-    //   dot.style.width = "20px";
-    // });
   </script>
 </footer>
