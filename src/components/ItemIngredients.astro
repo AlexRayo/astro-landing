@@ -10,19 +10,24 @@ const {
 ---
 
 <div
-  class="w-full lg:w-auto flex justify-center md:justify-start lg:flex-col text-center px-4 sm:px-6 py-3 md:p-6 lg:p-0 rounded-3xl bg-slate-100 lg:bg-transparent"
+  class="w-full lg:w-auto flex sm:justify-center md:justify-start lg:flex-col text-center px-4 sm:px-6 py-3 md:p-6 lg:p-0 rounded-3xl bg-slate-100 lg:bg-transparent"
 >
-  <div class="flex justify-center flex-wrap lg:flex-col text-[#202020]">
+  <div class="flex sm:justify-center flex-wrap lg:flex-col text-[#202020]">
+    <!-- icon and amount -->
     <div class="flex items-center justify-center">
+      <!-- the icon -->
       <div class={`${img_class}`}>
-        <slot />
+        <!-- add a custom css class to resize the icon with the prop `img_class`; some icons need diff sizes -->
+        <slot /><!-- icon Fragment -->
       </div>
+
       <p class="-ml-6 md:-ml-2 xl:ml-4 text-4xl xl:text-5xl font-bold">
         {amount}<b class="ml-2 text-2xl">{amount_unit}</b>
       </p>
     </div>
+    <!-- close icon and amount -->
     <p
-      class={`${amount_unit ? "-mt-3 sm:mt-3 sm:ml-2 lg:ml-0 lg:mt-0" : birria ? "-ml-2" : "ml-2"} flex items-center lg:ml-0 lg:justify-center xl:mt-4 text-lg xl:text-2xl font-semibold ${description_class}`}
+      class={`${amount_unit ? "-mt-3 xs:mt-3 xs:ml-2 lg:ml-0 lg:mt-0" : birria ? "-ml-2" : "ml-2"} flex items-center lg:ml-0 lg:justify-center xl:mt-4 text-xl xl:text-2xl font-semibold ${description_class}`}
     >
       {description}
     </p>
