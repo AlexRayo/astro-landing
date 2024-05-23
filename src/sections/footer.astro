@@ -1,25 +1,27 @@
 ---
 import Container from "../layouts/container.astro";
 import { Image } from "astro:assets";
-import imgFooter from "../../img/img-footer.jpg";
+import imgFooter from "../../img/img-footer.svg";
 ---
 
-<footer class="">
+<footer>
   <Container>
-    <div
-      id="splide3"
-      class="w-full h-96 mb-24 overflow-hidden imgs-footer whitespace-nowrap"
-    >
-      <Image
-        class="img-footer h-full object-cover inline -ml-1"
-        src={imgFooter}
-        alt="Rancho Bombs pack"
-      />
-      <Image
-        class="img-footer h-full object-cover inline -ml-1"
-        src={imgFooter}
-        alt="Rancho Bombs pack"
-      />
+    <div class="overflow-hidden">
+      <div
+        id="splide3"
+        class="w-[200%] lg:w-full mb-24 overflow-hidden imgs-footer whitespace-nowrap"
+      >
+        <Image
+          class="img-footer inline -ml-1"
+          src={imgFooter}
+          alt="Rancho Bombs illustration"
+        />
+        <Image
+          class="img-footer inline -ml-1"
+          src={imgFooter}
+          alt="Rancho Bombs illustration"
+        />
+      </div>
     </div>
   </Container>
 
@@ -45,6 +47,9 @@ import imgFooter from "../../img/img-footer.jpg";
         transform: translate(-100%);
       }
     }
+    .splide__pagination__page.is-active {
+      background: #0a0a0a !important;
+    }
   </style>
 
   <script>
@@ -57,22 +62,23 @@ import imgFooter from "../../img/img-footer.jpg";
       type: "loop",
 
       classes: {
-        arrow: "splide__arrow scale-150",
-        pagination: "splide__pagination top-[750px]", // container
-        page: "splide__pagination__page h-8 w-8 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
+        arrow: "splide__arrow scale-150 bg-white opacity-100 shadow-md",
+        pagination: "splide__pagination top-[750px] ", // container
+        active: "splide__pagination__page bg-black",
+        page: "splide__pagination__page h-6 w-6 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
       },
     });
     splide.mount();
 
     // @ts-ignore
-    var splide2 = new Splide("#splide2", {
+    var reviews = new Splide("#reviews", {
       type: "loop",
       drag: "free",
       perPage: 4,
       classes: {
-        arrow: "splide__arrow scale-150",
+        arrow: "splide__arrow scale-150 bg-white opacity-100 shadow-md",
         pagination: "splide__pagination top-[400px]", // container
-        page: "splide__pagination__page h-8 w-8 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
+        page: "splide__pagination__page h-6 w-6 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
       },
       breakpoints: {
         640: {
@@ -92,6 +98,6 @@ import imgFooter from "../../img/img-footer.jpg";
         },
       },
     });
-    splide2.mount();
+    reviews.mount();
   </script>
 </footer>
