@@ -5,19 +5,19 @@ import imgFooter from "../../img/img-footer.svg";
 ---
 
 <footer>
-  <Container>
+  <Container extra_classes="">
     <div class="overflow-hidden">
       <div
         id="splide3"
         class="w-[200%] lg:w-full mb-24 overflow-hidden imgs-footer whitespace-nowrap"
       >
         <Image
-          class="img-footer inline -ml-1"
+          class="img-footer inline -ml-2"
           src={imgFooter}
           alt="Rancho Bombs illustration"
         />
         <Image
-          class="img-footer inline -ml-1"
+          class="img-footer inline -ml-2"
           src={imgFooter}
           alt="Rancho Bombs illustration"
         />
@@ -35,6 +35,9 @@ import imgFooter from "../../img/img-footer.svg";
         transparent
       );
     } */
+    .splide__pagination__page.is-active {
+      background: #0a0a0a !important;
+    }
     .img-footer {
       animation: 25s slide infinite linear;
     }
@@ -47,25 +50,23 @@ import imgFooter from "../../img/img-footer.svg";
         transform: translate(-100%);
       }
     }
-    .splide__pagination__page.is-active {
-      background: #0a0a0a !important;
-    }
   </style>
 
   <script>
-    // var imgFooterCopy = document.querySelector('.img-footer')?.cloneNode(true);
+    // var imgFooterCopy = document.querySelector(".img-footer")?.cloneNode(true);
     // if (imgFooterCopy) {
-    //   document.querySelector('.imgs-footer')?.appendChild(imgFooterCopy);
+    //   document.querySelector(".imgs-footer")?.appendChild(imgFooterCopy);
     // }
     // @ts-ignore
     var splide = new Splide("#splide", {
       type: "loop",
 
       classes: {
-        arrow: "splide__arrow scale-150 bg-white opacity-100 shadow-md",
+        arrow:
+          "splide__arrow scale-150 bg-white scale-95 opacity-100 shadow-md",
         pagination: "splide__pagination top-[750px] ", // container
         active: "splide__pagination__page bg-black",
-        page: "splide__pagination__page h-6 w-6 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
+        page: "splide__pagination__page h-6 w-6 shadow-md mx-2 md:mx-4",
       },
     });
     splide.mount();
@@ -76,7 +77,8 @@ import imgFooter from "../../img/img-footer.svg";
       drag: "free",
       perPage: 4,
       classes: {
-        arrow: "splide__arrow scale-150 bg-white opacity-100 shadow-md",
+        arrow:
+          "splide__arrow scale-150 bg-white scale-95 opacity-100 shadow-md",
         pagination: "splide__pagination top-[400px]", // container
         page: "splide__pagination__page h-6 w-6 border-2 border-slate-500 shadow-md mx-2 md:mx-4",
       },

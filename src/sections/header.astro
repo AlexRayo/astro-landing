@@ -4,9 +4,9 @@ import Container from "../layouts/container.astro";
 import logo from "../../img/nav_top_logo.svg?raw";
 ---
 
-<header>
+<header class="relative">
   <nav class="py-2 fixed md:relative bg-white z-50 w-full shadow-lg">
-    <Container extra_classes="relative flex justify-between items-center">
+    <Container extra_classes="flex justify-between items-center">
       <div class="w-16 lg:w-24">
         <Fragment set:html={logo} />
       </div>
