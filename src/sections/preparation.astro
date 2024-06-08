@@ -10,20 +10,27 @@ import ic_birria from "../../img/ic_birria.svg?raw";
 import ic_stove from "../../img/ic_stovetop.svg?raw";
 import ic_slow_cooker from "../../img/ic_slow_cooker.svg?raw";
 import ic_pressure from "../../img/ic_pressure.svg?raw";
+import BtnBuy from "../components/BtnBuy.astro";
 ---
 
 <section class="bg-[#F2EFDD]">
-  <Container extra_classes="py-36">
+  <Container extra_classes="pt-36">
     <h2 class="text-5xl md:text-6xl font-bold leading-[55px]">
       How Does It Work ?
     </h2>
     <div class="flex justify-between">
-      <p
+      <h4
         class="text-3xl md:text-4xl mt-8 sm:mt-12 lg:mt-20 mb-12 text-[#DF2536] font-semibold"
       >
         You'll need
-      </p>
-      <p class="img-here"></p>
+      </h4>
+      <div class="relative w-5/12">
+        <img
+          class="scale-75 -top-4 lg:scale-100 absolute right-0 sm:-top-8"
+          src="https://cdn.shopify.com/s/files/1/0641/1445/8815/files/character.svg?v=1717697484"
+          alt="character"
+        />
+      </div>
     </div>
 
     <div
@@ -108,6 +115,15 @@ import ic_pressure from "../../img/ic_pressure.svg?raw";
       >
         <Fragment set:html={ic_slow_cooker} />
       </Cooker>
+    </div>
+    <div class="text-center py-28">
+      <p class="text-xl">
+        For a final touch add salt to taste, chopped cilantro, diced onion,
+        squeezed lime juice and your favorite salsa.
+      </p>
+      <div class="mt-8 flex justify-center w-full">
+        <BtnBuy />
+      </div>
     </div>
   </Container>
 </section>

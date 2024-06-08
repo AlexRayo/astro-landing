@@ -5,9 +5,18 @@ import Container from "../layouts/container.astro";
 
 <section class="bg-white py-36">
   <Container>
-    <h2 class="text-5xl md:text-6xl font-bold text-[#202020]">
-      A Taste of Home
-    </h2>
+    <div class="flex justify-between">
+      <h2 class="text-5xl md:text-6xl font-bold text-[#202020]">
+        A Taste of Home
+      </h2>
+      <div class="relative w-5/12 hidden lg:block">
+        <img
+          class="absolute right-0 scale-75 xl:scale-100 -top-80"
+          src="https://cdn.shopify.com/s/files/1/0641/1445/8815/files/birria_bombs.png?v=1717869351"
+          alt="character"
+        />
+      </div>
+    </div>
     <div class="mt-12 w-full h-[700px]">
       <div id="splide" class="splide h-full">
         <div class="splide__track h-full">
