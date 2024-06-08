@@ -1,0 +1,16 @@
+/* footer.css */
+.splide__pagination__page.is-active {
+  background: #0a0a0a !important;
+}
+.img-footer {
+  animation: 25s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}

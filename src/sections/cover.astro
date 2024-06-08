@@ -1,8 +1,9 @@
 ---
 import BtnBuy from "../components/BtnBuy.astro";
 import Container from "../layouts/container.astro";
-import { Image } from "astro:assets";
-import localCoverImage from "../../img/img_pack_and_tacos.png";
+
+const ONLINE_URL =
+  "https://cdn.shopify.com/s/files/1/0641/1445/8815/files/img_pack_and_tacos.png?v=1717697635";
 ---
 
 <section
@@ -35,7 +36,7 @@ import localCoverImage from "../../img/img_pack_and_tacos.png";
     <div
       class="md:absolute md:w-[480px] lg:w-[640px] xl:w-[740px] md:bottom-0 right-0 z-[20]"
     >
-      <Image class="mt-8" src={localCoverImage} alt="Rancho Bombs pack" />
+      <img class="mt-8" src={ONLINE_URL} alt="Rancho Bombs pack" />
     </div>
   </Container>
 

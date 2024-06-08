@@ -4,11 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-import "@fontsource/poppins";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/600.css";
 ---
 
 <!doctype html>
@@ -25,9 +20,10 @@ import "@fontsource/poppins/600.css";
 			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
 			rel="stylesheet"
 		/>
-		<!-- <script
-			src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js "
-		></script> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -35,32 +31,3 @@ import "@fontsource/poppins/600.css";
 		<slot />
 	</body>
 </html>
-<!-- <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style> -->
