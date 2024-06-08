@@ -1,29 +1,30 @@
 ---
 import Container from "../layouts/container.astro";
-import { Image } from "astro:assets";
-import imgFooter from "../../img/img-footer.svg";
+
+const IMG_RANCHO =
+  "https://cdn.shopify.com/s/files/1/0641/1445/8815/t/2/assets/rancho-birriabombs.svg";
 ---
 
 <footer>
-  <Container extra_classes="">
+  <div class="lg:container lg:px-0 lg:w-full xl:w-[1245px] 2xl:w-[1328px]">
     <div class="overflow-hidden">
       <div
         id="splide3"
         class="w-[200%] lg:w-full mb-24 overflow-hidden imgs-footer whitespace-nowrap"
       >
-        <Image
+        <img
           class="img-footer inline -ml-2"
-          src={imgFooter}
+          src={IMG_RANCHO}
           alt="Rancho Bombs illustration"
         />
-        <Image
+        <img
           class="img-footer inline -ml-2"
-          src={imgFooter}
+          src={IMG_RANCHO}
           alt="Rancho Bombs illustration"
         />
       </div>
     </div>
-  </Container>
+  </div>
 
   <style>
     /* .imgs-footer {
