@@ -4,31 +4,99 @@ import Container from "../layouts/container.astro";
 import logo from "../../img/nav_top_logo.svg?raw";
 ---
 
+<style>
+  /* btn */
+  .menu-icon-container {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+  }
+  .menu-icon-container span {
+    position: relative;
+    top: 12px;
+  }
+  .menu-icon-container span:before,
+  .menu-icon-container span:after {
+    position: absolute;
+    content: "";
+  }
+  .menu-icon-container span,
+  .menu-icon-container span:before,
+  .menu-icon-container span:after {
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #202020;
+    display: block;
+  }
+  .menu-icon-container span:before {
+    margin-top: -12px;
+  }
+  .menu-icon-container span:after {
+    margin-top: 12px;
+  }
+
+  /* ICON */
+  .menu-icon span {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  .icon-animation span {
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  .menu-icon span:before {
+    -webkit-transition-property:
+      margin,
+      -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+  }
+  .icon-animation span:before {
+    margin-top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+  }
+  .menu-icon span:after {
+    -webkit-transition-property:
+      margin,
+      -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+  }
+  .icon-animation span:after {
+    margin-top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+  }
+</style>
+
 <header class="relative">
-  <nav class="py-2 fixed md:relative bg-white z-50 w-full shadow-lg">
+  <nav
+    class="py-2 px-4 md:p-0 fixed md:relative bg-white z-50 w-full shadow-lg"
+  >
     <Container extra_classes="flex justify-between items-center">
       <div class="w-16 lg:w-24">
         <Fragment set:html={logo} />
       </div>
-
-      <button id="icon_menu" class="md:hidden text-5xl" type="button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="48"
-          viewBox="0 0 24 24"
-          ><path
-            fill="none"
-            stroke="#202020"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path></svg
-        >
-      </button>
+      <a id="icon_menu" class="menu-icon-container menu-icon"><span></span></a>
       <ul
         id="menu"
-        class="absolute md:relative right-0 top-16 md:top-0 px-8 md:px-0 py-2 md:py-0 md:flex scale-0 md:scale-100 bg-white min-w-80 text-left rounded-bl-2xl z-10 shadow-lg md:shadow-none"
+        class="absolute md:relative -right-full top-16 md:top-0 h-[812px] md:h-auto w-full md:w-auto px-5 md:px-0 py-2 md:py-0 md:flex md:right-0 bg-white min-w-80 text-right rounded-bl-2xl z-10 shadow-lg md:shadow-none origin-top-right transition-all duration-300"
       >
         <MenuItem HREF="https://ranchobombs.com">Home</MenuItem>
         <MenuItem HREF="https://ranchobombs.com/products/rancho-bomb-birria"
@@ -44,25 +112,36 @@ import logo from "../../img/nav_top_logo.svg?raw";
 
 <script>
   if (document) {
-    const menu: HTMLElement | null = document.getElementById("menu");
-    const icon_menu: HTMLElement | null = document.getElementById("icon_menu");
+    const menu = document.getElementById("menu");
+    const icon_menu = document.getElementById("icon_menu");
 
-    icon_menu?.addEventListener("click", () => {
-      if (menu) {
-        menu.classList.toggle("!scale-100");
-      }
-    });
+    if (menu && icon_menu) {
+      icon_menu.addEventListener("click", () => {
+        menu.classList.toggle("!right-0");
+        icon_menu.classList.toggle("icon-animation");
+      });
 
-    document.addEventListener("click", (event) => {
-      const targetNode = event.target as Node;
-      if (
-        menu &&
-        icon_menu &&
-        !menu.contains(targetNode) &&
-        !icon_menu.contains(targetNode)
-      ) {
-        menu.classList.remove("!scale-100");
-      }
-    });
+      document.addEventListener("click", (event: MouseEvent) => {
+        const targetNode = event.target as Node;
+        if (
+          menu &&
+          icon_menu &&
+          !menu.contains(targetNode) &&
+          !icon_menu.contains(targetNode)
+        ) {
+          menu.classList.remove("!right-0");
+          icon_menu.classList.remove("icon-animation");
+        }
+      });
+
+      // Cerrar menú al hacer clic en cualquier elemento de la lista del menú
+      const menuItems = menu.querySelectorAll("li, a");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          menu.classList.remove("!right-0");
+          icon_menu.classList.remove("icon-animation");
+        });
+      });
+    }
   }
 </script>
