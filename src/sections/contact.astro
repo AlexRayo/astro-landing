@@ -1,0 +1,103 @@
+---
+import Container from "../layouts/container.astro";
+---
+
+<!-- Formulario de Contacto -->
+<section id="contact">
+  <Container extra_classes="border-t-2 py-20">
+    <h2
+      class="mb-6 text-5xl md:text-6xl font-bold text-center lg:text-left text-[#202020]"
+    >
+      Contact Us
+    </h2>
+    <div class="flex flex-col md:flex-row md:justify-between">
+      <form method="post" action="/contact#contact" class="md:w-6/12 lg:w-4/12">
+        <input type="hidden" name="form_type" value="contact" />
+        <input type="hidden" name="utf8" value="✓" />
+        <div>
+          <label class="hidden" for="contact_name">Name</label>
+          <input
+            type="text"
+            id="contact_name"
+            name="contact[name]"
+            required
+            class="border border-[#202020] text-[#202020] mt-6 block w-full rounded-xl p-4 placeholder-opacity"
+            placeholder="Name"
+          />
+        </div>
+        <div>
+          <label class="hidden" for="contact_email">E-mail</label>
+          <input
+            type="email"
+            id="contact_email"
+            name="contact[email]"
+            required
+            class="border border-[#202020] text-[#202020] mt-6 block w-full rounded-xl p-4 placeholder-opacity"
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <label class="hidden" for="contact_message">Message</label>
+          <textarea
+            id="contact_message"
+            name="contact[body]"
+            rows="5"
+            required
+            class="border border-[#202020] text-[#202020] mt-6 block w-full rounded-xl p-4 placeholder-opacity"
+            placeholder="Message"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="uppercase w-full mt-6 py-2 px-4 text-3xl md:text-2xl font-bold bg-[rgb(0,146,69)] text-white rounded-xl"
+          >Send</button
+        >
+      </form>
+
+      <div class="md:pl-4 md:pt-6 lg:pl-0 md:w-6/12 lg:w-4/12">
+        <div
+          class="mt-8 md:mt-0 mb-8 inline-block float-right p-4 border border-[#202020] rounded-xl"
+        >
+          <div class="">
+            <h4 class="text-xl text-[#202020] font-semibold mb-4">
+              Social Networks
+            </h4>
+            <ul>
+              <li>
+                <a href="" class="block text-[#202020] mb-4"
+                  >Instagram.com/ranchobombs</a
+                >
+                <a href="" class="block text-[#202020] mb-4"
+                  >TikTok.com/@ranchobombs</a
+                >
+                <a href="" class="block text-[#202020] mb-4"
+                  >Facebook.com/ranchobombs</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0641/1445/8815/files/contact.png?v=1721084438"
+          alt="Contact-img"
+        />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  /* Estilo para el placeholder */
+  .placeholder-opacity::placeholder {
+    color: rgba(32, 32, 32, 1); /* Color y opacidad del placeholder */
+  }
+
+  .placeholder-opacity:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(32, 32, 32, 1);
+  }
+
+  .placeholder-opacity::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(32, 32, 32, 1);
+  }
+</style>

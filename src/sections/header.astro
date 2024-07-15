@@ -8,7 +8,6 @@ import logo from "../../img/nav_top_logo.svg?raw";
   /* btn */
   .menu-icon-container {
     position: relative;
-    display: inline-block;
     height: 30px;
     width: 30px;
   }
@@ -86,14 +85,18 @@ import logo from "../../img/nav_top_logo.svg?raw";
 </style>
 
 <header class="relative">
-  <nav
-    class="py-2 px-4 md:p-0 fixed md:relative bg-white z-50 w-full shadow-lg"
-  >
+  <nav class="px-4 md:p-0 fixed md:relative bg-white z-50 w-full shadow-lg">
     <Container extra_classes="flex justify-between items-center">
-      <div class="w-16 lg:w-24">
-        <Fragment set:html={logo} />
+      <div class="w-16 lg:w-24 py-2">
+        <a href="https://ranchobombs.com/" class="">
+          <Fragment set:html={logo} />
+        </a>
       </div>
-      <a id="icon_menu" class="menu-icon-container menu-icon"><span></span></a>
+      <a
+        id="icon_menu"
+        class="menu-icon-container menu-icon inline-block md:hidden !important"
+        ><span></span></a
+      >
       <ul
         id="menu"
         class="absolute md:relative -right-full top-16 md:top-0 h-[812px] md:h-auto w-full md:w-auto px-5 md:px-0 py-2 md:py-0 md:flex md:right-0 bg-white min-w-80 text-right rounded-bl-2xl z-10 shadow-lg md:shadow-none origin-top-right transition-all duration-300"
